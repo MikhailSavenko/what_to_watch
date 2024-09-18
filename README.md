@@ -1,42 +1,66 @@
-### Как запустить проект:
+### Что посмотреть?
 
-Клонировать репозиторий и перейти в него в командной строке:
+**what_to_watch** — это проект, написанный в рамках изучения библиотеки Flask. Он реализует RESTful API с использованием только Flask, а для работы с базой данных использованы `flask-sqlalchemy` и `Flask-Migrate`, которые используют Alembic для миграций. Для фронтенда применяются HTML, CSS и шаблонизатор Jinja.
 
-```
-git clone 
-```
+Проект предоставляет возможность:
+- Получить случайное название и описание фильма.
+- Выбрать другой фильм(следующий случайный).
+- Создать свой отзыв на фильм.
 
-```
-cd what_to_watch
-```
+### Шаги для запуска проекта
 
-Cоздать и активировать виртуальное окружение:
+1. **Клонируйте репозиторий и перейдите в директорию проекта:**
 
-```
-python3 -m venv venv
-```
+    ```bash
+    git clone git@github.com:MikhailSavenko/what_to_watch.git
+    ```
 
-```
-source venv/bin/activate
-```
-или для пользователей Windows
+    ```bash
+    cd what_to_watch
+    ```
 
-```
-source env/Scripts/activate
-```
+2. **Создайте и активируйте виртуальное окружение:**
 
-Установить зависимости из файла requirements.txt:
+    Для пользователей macOS/Linux:
 
-```
-python3 -m pip install --upgrade pip
-```
+    ```bash
+    python3 -m venv venv
+    ```
 
-```
-pip install -r requirements.txt
-```
+    ```bash
+    source venv/bin/activate
+    ```
 
-Запустить проект:
+    Для пользователей Windows:
 
-```
-flask run
-```
+    ```bash
+    python -m venv venv
+    ```
+
+    ```bash
+    venv\Scripts\activate
+    ```
+
+3. **Установите зависимости из файла `requirements.txt`:**
+
+    ```bash
+    python -m pip install --upgrade pip
+    ```
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. **Переменные окружения**  
+   Создайте файл `.env` и скопируйте в него данные из файла `env_file.txt`. Для этого выполните следующие шаги:
+
+   ```bash
+   cp env_file.txt .env
+   ```
+
+5. **Запустите проект:**
+
+    ```bash
+    flask run
+    ```
+
+Теперь приложение должно быть доступно по адресу `http://localhost:5000`.
